@@ -4,10 +4,10 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX ns: <http://DeportesMadridGroup2.es/Espacios/ontology/>
 SELECT ?name
 WHERE {
-  ?centro ns:tieneCodigoPostal "28025".
+  ?centro ns:CodigoPostal "28025".
   ?centro ns:tieneEquipamiento ?eq.
   ?eq ns:sePractica "basketball".
-  ?centro ns:tieneNombre ?name
+  ?centro ns:Nombre ?name
 }
 
 
@@ -24,7 +24,7 @@ WHERE {
   FILTER (?lat > 40.2)
   ?centro ns:tieneEquipamiento ?eq.
   ?eq ns:sePractica "paddle tennis".
-  ?centro ns:tieneNombre ?name
+  ?centro ns:Nombre ?name
 }
 
 
@@ -38,9 +38,9 @@ PREFIX nseq: <http://DeportesMadridGroup2.es/Espacios/instances/Equipamiento/>
 SELECT ?name ?barrio
 WHERE {
   ?park a ns:ParquesJardines.
-  ?park ns:estaEnDistrito "VICALVARO".
-  ?park ns:estaEnBarrio ?barrio.
-  ?park ns:tieneNombre ?name
+  ?park ns:Distrito "VICALVARO".
+  ?park ns:Barrio ?barrio.
+  ?park ns:Nombre ?name
 }
 
 
@@ -51,10 +51,10 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX ns: <http://DeportesMadridGroup2.es/Espacios/ontology/>
 SELECT ?name ?barrio ?calle
 WHERE {
-  ?centro ns:estaEnBarrio ?barrio.
+  ?centro ns:Barrio ?barrio.
   ?centro ns:tieneEquipamiento ?eq.
   ?centro ns:tieneDireccion ?dir.
   ?dir ns:tieneCalle ?calle.
   ?eq ns:sePractica "tennis".
-  ?centro ns:tieneNombre ?name
+  ?centro ns:Nombre ?name
 }
